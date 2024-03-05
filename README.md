@@ -90,8 +90,67 @@ Dockerfile
 ```
 ![dockerfile](<images/docker file.jpg>)
 
+---
+---
 
 
+# Let us Explain the dockerfile
+
+lets go through that Dockerfile to understand what is going on step by step, then we proceed to building our custom jenkins image for terraform.
+
+1. 
+```
+FROM jenkins/jenkins:lts
+```
+Use the official Jenkins base image.
+
+This line specifies the base image for your Dockerfile. 
+
+In this case, it's using the official Jenkins LTS (Long Term Support) image as a starting point.
+
+2. 
+```
+USER root
+```
+Switch to the root user to install additional packages.
+
+This command switches to the root user within the Docker image. 
+
+This is done to perform actions that require elevated permissions, such as installing packages.
+
+3. 
+```
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    wget \
+    software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
+```
+Install necessary tools and dependencies (e.g., Git, unzip, wget, software-properties-common).
+
+This section installs various tools and dependencies needed for the image. 
+
+The apt-get update command refreshes the package list, and apt-get install installs the specified packages *(git, unzip, wget, software-properties-common)*.
+
+The *&&* is used to chain commands, and *rm -rf /var/lib/apt/lists/** removes unnecessary package lists, helping to reduce the size of the Docker image.
+
+4. 
+```
+RUN apt-get update && apt-get install -y gnupg software-properties-common wget \
+    && wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | tee /usr/share/keyrings/hashicorp-archive-keyring.gpg \
+    && gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint \
+    && echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hashicorp.list \
+    && apt-get update && apt-get install -y terraform \
+    && rm -rf /var/lib/apt/lists/*
+```
+This block installs Terraform. 
+
+It follows similar steps as before: updating the package list, installing dependencies, adding HashiCorp's GPG key, configuring the repository, updating again, and finally installing Terraform.
+
+Again, it includes cleaning up unnecessary package lists.
+
+>A quick note on GPG Key: GPG (GNU Privacy Guard) is a free and open-source software for encrypting and signing data. In the context of software distribution, GPG keys are used to verify the integrity and authenticity of packages.
 
 
 
