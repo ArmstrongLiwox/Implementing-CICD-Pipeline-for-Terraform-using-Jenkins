@@ -40,7 +40,8 @@ Jenkins comes with a docker image that can be used out of the box to run a conta
 
 But because we have unique requirement to run terraform, we need to find a way to extend the readily available jenkins image.
 
-The Jenkins official docker image can be found here
+The Jenkins official docker image can be found here (https://hub.docker.com/_/jenkins/).
+
 Extending this image means we have to write our own dockerfile, and include all the other stuff we need.
 
  
@@ -86,5 +87,27 @@ Dockerfile
  # Switch back to the Jenkins user
  USER jenkins
 
-
 ```
+![dockerfile](<images/docker file.jpg>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
