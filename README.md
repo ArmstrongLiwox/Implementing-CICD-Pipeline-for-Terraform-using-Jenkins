@@ -152,10 +152,52 @@ Again, it includes cleaning up unnecessary package lists.
 
 >A quick note on GPG Key: GPG (GNU Privacy Guard) is a free and open-source software for encrypting and signing data. In the context of software distribution, GPG keys are used to verify the integrity and authenticity of packages.
 
+5. 
+```
+WORKDIR /app
+```
+Set the working directory.
+
+this command sets the working directory to /app for subsequent commands. 
+
+We will arrive here when we enter the container.
+
+6. 
+```
+RUN terraform --version
+```
+This command prints the version of terraform to the console. This will verify is the installation was successful.
+
+7. 
+```
+USER jenkins
+```
+This line Switches back to jekens user which is at a lower previlege level.
+
+---
+---
 
 
+# Building and running the docker image
 
+Our mission right now is to have a docker container running Jenkins, but also have terraform installed.
 
+Next is to build the docker image, and run it for further configuration.
+
+We should Make sure that we are inside the folder containing the Dockerfile . 
+
+This is generally referred to as the Docker Build Context . 
+
+The build context is the set of files located in the specified directory or path when you build a Docker image using the docker build command. 
+
+The content of the build context is sent to the Docker daemon during the build process, and it serves as the source for building the Docker image.
+
+1. Build the custom jenkins image
+
+```
+ docker build -t jenkins-server . 
+```
+the harsh dat looks like this ```800f8f48466b3419d7cbf37908b12f146120b31260147bdd3b433d23e60f976b```
 
 
 
