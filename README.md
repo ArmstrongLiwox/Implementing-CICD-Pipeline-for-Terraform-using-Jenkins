@@ -201,7 +201,13 @@ the harsh dat looks like this ```800f8f48466b3419d7cbf37908b12f146120b31260147bd
 
 
 
+```
+docker exec -it  7aa30ddbb392  /bin/bash
+```
 
+```
+cat /var/jenkins_home/secrets/initialAdminPassword
+```
 
 
 
