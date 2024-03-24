@@ -17,7 +17,7 @@ In this hands-on project, we will delve into the intricacies of building a robus
 
 By automating the building, testing, and deployment of infrastructure changes, these pipelines enhance speed, reliability, and consistency across environments. 
 
-he use of Infrastructure as Code (laC) with Terraform ensures *reproducibility and scalability*, while Jenkins facilitates *collaborative development, visibility, and continuous integration and deployment*.
+The use of Infrastructure as Code (laC) with Terraform ensures *reproducibility and scalability*, while Jenkins facilitates *collaborative development, visibility, and continuous integration and deployment*.
 
 This approach not only reduces time-to-market but also promotes resource efficiency, cost optimization, and compliance with security standards. 
 
@@ -92,7 +92,9 @@ Dockerfile
 
 ---
 ---
-
+![validate file](images/validate.jpg)
+---
+---
 
 # Let us Explain the dockerfile
 
@@ -195,20 +197,27 @@ The content of the build context is sent to the Docker daemon during the build p
 1. Build the custom jenkins image
 
 ```
- docker build -t jenkins-server . 
+docker build -t jenkins-server . 
 ```
 the harsh dat looks like this ```800f8f48466b3419d7cbf37908b12f146120b31260147bdd3b433d23e60f976b```
 
+2. 
+```
+docker run -d -p 8080:8080 --name jenkins-server jenkins-server 
+```
+Run the image into a docker container.
 
+3. 
 
 ```
-docker exec -it  7aa30ddbb392  /bin/bash
+docker ps
 ```
 
-```
-cat /var/jenkins_home/secrets/initialAdminPassword
-```
+4. 
 
+Access the jenkens server from a web browser on ```localhost:8000```
+
+---
 
 
 
