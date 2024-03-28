@@ -224,6 +224,10 @@ docker ps
 Access the jenkens server from a web browser on ```localhost:8000```
 
 ---
+![open port](<images/x (2).png>)
+
+![plugins](<images/x (1).png>)
+
 ![1](images/1.png)
 
 ![2](images/2.png)
