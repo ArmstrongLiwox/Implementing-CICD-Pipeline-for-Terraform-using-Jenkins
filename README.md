@@ -266,6 +266,28 @@ Access the jenkens server from a web browser on ```localhost:8000```
 
 ![24](images/24.png)
 
+![32](images/32.png)
+
+![25](images/25.png)
+
+![26](images/26.png)
+
+![27](images/27.png)
+
+![28](images/28.png)
+
+![29](images/29.png)
+
+![30](images/30.png)
+
+![31](images/31.png)
+
+![24](images/24.png)
+
+![finish](images/welldone.jpg)
+
+![success](images/success.jpg)
+
 
 
 
