@@ -54,6 +54,8 @@ terraform-with-cicd
 ```
 Dockerfile
 ```
+![create dockerfile](images/12.png)
+
 3. Add the below content in the dockerfile
 ```
  # Use the official Jenkins base image
@@ -88,11 +90,9 @@ Dockerfile
  USER jenkins
 
 ```
-![dockerfile](<images/docker file.jpg>)
+![docker build](images/13.png)
 
----
----
-![validate file](images/validate.jpg)
+![activate jenkins](images/14.png)
 ---
 ---
 
@@ -201,6 +201,10 @@ docker build -t jenkins-server .
 ```
 the harsh dat looks like this ```800f8f48466b3419d7cbf37908b12f146120b31260147bdd3b433d23e60f976b```
 
+![docker build](images/13.png)
+
+
+
 2. 
 ```
 docker run -d -p 8080:8080 --name jenkins-server jenkins-server 
@@ -212,18 +216,35 @@ Run the image into a docker container.
 ```
 docker ps
 ```
+![docker access](images/14.png)
+
 
 4. 
 
 Access the jenkens server from a web browser on ```localhost:8000```
 
 ---
+![1](images/1.png)
 
+![2](images/2.png)
 
+![3](images/3.png)
 
+![4](images/4.png)
 
+![5](images/5.png)
 
+![6](images/6.png)
 
+![7](images/7.png)
 
+![8](images/8.png)
 
+![9](images/9.png)
+
+![10](images/10.png)
+
+![11](images/11.png)
+
+![15](images/15.png)
 
